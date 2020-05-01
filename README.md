@@ -27,6 +27,7 @@
 * To group folders by tag you need to first add the tag column and then select it in the "Group by" setings (under "View")
 * If you place the "Tag_Folder.bat" file somewhere other than where I said above you will need to change the "Tag Folder Registry.reg" file to fit
 
+
 # Project Structure
 ```
 Name of Project Folder/  (Defined in "create_repo.py")

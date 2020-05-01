@@ -1,4 +1,4 @@
-# Make sure to read README to understand how to use thi script
+# Make sure to read README to understand how to use this script
 
 function create {
 	# Variables to change
