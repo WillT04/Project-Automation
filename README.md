@@ -1,10 +1,10 @@
 # Setup
 * Fill in "create.ps1" with your authentication data and path to your projects folder
-* Add the "create.ps1" script to your powershell profile (run "code $profile" to access powershell profile)
+* Add the "create.ps1" script to your PowerShell profile (run "code $profile" to access PowerShell profile)
 
 
 # Usage
-1. Run "create" from powershell
+1. Run "create" from PowerShell
 2. Enter the name of the project
 3. Enter the tags, seperated by a comma
 4. Enter if you want the folder to be tracked on git (Y/N)
