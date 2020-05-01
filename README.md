@@ -1,5 +1,5 @@
 # Setup
-* Fill in "create_repo.py" with your authentication data and path to your projects folder
+* Fill in "create.ps1" with your authentication data and path to your projects folder
 * Add the "create.ps1" script to your powershell profile (run "code $profile" to access powershell profile)
 
 
