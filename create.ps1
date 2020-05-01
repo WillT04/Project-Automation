@@ -1,5 +1,4 @@
 # Make sure to read README to understand how to use thi script
-# To test comment out the function creation code
 
 function create {
 	# Variables to change
