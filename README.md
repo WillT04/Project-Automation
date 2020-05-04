@@ -4,7 +4,7 @@
 
 
 # Usage
-1. Run "create" from PowerShell
+1. Run "create" (alias: "c") from PowerShell
 2. Enter the name of the project
 3. Enter the tags, seperated by a comma
 4. Enter if you want the folder to be tracked on git (Y/N)

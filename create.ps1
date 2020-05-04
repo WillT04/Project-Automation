@@ -93,3 +93,5 @@ Prop5=31,$realtags"
 		code . 
 	}
 }
+
+Set-Alias -Name c -Value create
