@@ -4,17 +4,10 @@
 
 
 # Usage
-1. Run "create" (alias: "c") from PowerShell
+1. Run "New-Project" from PowerShell
 2. Enter the name of the project
 3. Enter the tags, seperated by a comma
 4. Enter if you want the folder to be tracked on git (Y/N)
-5. Enter the IDEs that you want to open with the project
-
-
-# IDE Options
-* IDEA = Intellij IDEA
-* PyCharm = PyCharm
-* Code = VS Code
 
 
 # Tags
@@ -44,3 +37,9 @@ Name of Project Folder/  (Defined in "create_repo.py")
     ├── Are
     └── Local
 ```
+
+
+# Aliases
+### New-Project:
+* create
+* c
