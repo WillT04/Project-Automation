@@ -1,6 +1,6 @@
 # Make sure to read README to understand how to use this script
 
-function create {
+function New-Project {
 	# Variables to change
 	$username = "username"
 	$password = "password"
@@ -82,4 +82,5 @@ Prop5=31,$realtags"
 	attrib +h +s desktop.ini
 }
 
-Set-Alias -Name c -Value create
+Set-Alias -Name create -Value New-Project
+Set-Alias -Name c -Value New-Project
