@@ -17,7 +17,6 @@ function create {
 	[String] $name = Read-Host "Name of project"
 	[String] $tags = Read-Host "Tags"
 	[String] $tracked = Read-Host "Tracked (Y/N)"
-	[string] $ide = Read-Host "IDE"
 	Write-Host ""
 
 	# Goes to the Projects folder
@@ -81,17 +80,6 @@ function create {
 Prop5=31,$realtags"
 
 	attrib +h +s desktop.ini
-
-	# Opens any IDEs if requested
-	if ($ide.ToUpper().Contains("IDEA")) {
-		idea .
-	} 
-	if ($ide.ToUpper().Contains("PYCHARM")) {
-		pycharm .
-	}
-	if ($ide.ToUpper().Contains("CODE")) {
-		code . 
-	}
 }
 
 Set-Alias -Name c -Value create
