@@ -1,0 +1,16 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Backend.run.app" />
+          <option value="Backend.run.models" />
+          <option value="Backend.app.*" />
+          <option value="Backend.migrate.*" />
+          <option value="Backend.resources.register.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
