@@ -7,7 +7,7 @@
 	[String] $accessToken = "token"
 	[String] $companyName = "name"
 
-	# End of variables to change
+# End of variables to change
 
 function New-Project {
 	$base64Token = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $accessToken)))
@@ -75,8 +75,9 @@ function New-Project {
 		}
 		
 		
-		# Adds the remote
+		# Adds the remote and renames default branch to main
 		git remote add origin git@github.com:$org/$slug.git
+		git branch -M main
 
 		# Adds the basic repo files (and ignores desktop.ini)
 		New-Item -path "README.md" -ItemType File | Out-Null
