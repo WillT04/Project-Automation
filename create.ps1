@@ -85,7 +85,7 @@ function New-Project {
 		# Adds all files to github and sets the origin master as the defualt branch
 		git add .
 		git commit -m "Initial Commit" | Out-Null
-		git push -u origin master 2>&1 | Out-Null
+		git push -u origin main 2>&1 | Out-Null
 
 	} else {
 		Write-Host ""
