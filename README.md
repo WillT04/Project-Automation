@@ -2,7 +2,8 @@
 This project allows for quick setup of new projects. It creates the project folder and tags it. It also allows for automatically adding the project to github, and adding the required files for git (README.md and .gitignore). It also allows you to add github repos to a personal or company account.
 
 # Setup
-* Fill in "create.ps1" with your authentication data and path to your projects folder
+* Install the GitHub CLI
+* Run "gh auth login" in a PowerShell console
 * Add the "create.ps1" script to your PowerShell profile (run "code $profile" to access PowerShell profile)
 
 

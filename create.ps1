@@ -4,20 +4,16 @@
 
 	[String] $projectsPath = "Path/To/Projects"
 	[String] $username = "username"
-	[String] $accessToken = "token"
 	[String] $companyName = "name"
 
 # End of variables to change
 
 function New-Project {
-	$base64Token = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $accessToken)))
-
 	# Asks the users for the variables
 	[String] $name = Read-Host "Name of project"
 	[String] $tags = Read-Host "Tags"
 	[String] $tracked = Read-Host "Tracked (Y/N)"
 	
-
 	# Goes to the Projects folder
 	Set-Location $projectsPath 
 
@@ -38,12 +34,6 @@ function New-Project {
 			$description = "A new repo"
 		}
 
-		if ($private.ToUpper().Equals("N")) {
-			$private = "false"
-		} else {
-			$private = "true"
-		}
-
 		Set-Location Tracked
 
 		mkdir $name | Out-Null
@@ -52,41 +42,20 @@ function New-Project {
 		# Initiates git
 		git init | Out-Null
 
-		# Gets the repo slug (no spaces)
-		$slugs = $name -split " "
-		$slug = $slugs -join "-"
-
-		# Make the repo
-		$headers = @{
-			"Authorization" = "Basic $base64Token"
-		}
-
-		$body = @{
-			name = $slug;
-			description = $description;
-			org = $org;
-			private = $private
-		} | ConvertTo-Json
-
-		if ($org.Equals($companyName)) {
-			Invoke-RestMethod -Uri https://api.github.com/orgs/$org/repos -Headers $headers -Body $body -Method Post | Out-Null
+		if ($private.ToUpper().Equals("N")) {
+			gh repo create -y -d $description --public "$org/$name"
 		} else {
-			Invoke-RestMethod -Uri https://api.github.com/user/repos -Headers $headers -Body $body -Method Post | Out-Null
-		}
+			gh repo create -y -d $description --private "$org/$name"
+		}		
 		
-		
-		# Adds the remote and renames default branch to main
-		git remote add origin git@github.com:$org/$slug.git
-		git branch -M main
-
 		# Adds the basic repo files (and ignores desktop.ini)
 		New-Item -path "README.md" -ItemType File | Out-Null
 		Set-Content ".gitignore" -Value "desktop.ini" 
 
-		# Adds all files to github and sets the origin master as the defualt branch
+		# Adds all files to github and sets the origin main as the defualt branch
 		git add .
 		git commit -m "Initial Commit" | Out-Null
-		git push -u origin main 2>&1 | Out-Null
+		git push --set-upstream origin master 2>&1 | Out-Null
 
 	} else {
 		Write-Host ""
